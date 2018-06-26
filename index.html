@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <title>Lokoom</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="general.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+  <script src="https://use.fontawesome.com/6d3ec91945.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    function initMap() {
+      var point = {lat: 51.803927, lng: 19.372441};
+      var map = new google.maps.Map(document.getElementById('googleMap'), {
+        zoom: 15,
+        center: point
+      });
+      var marker = new google.maps.Marker({
+        position: point,
+        map: map,
+        scrollwheel: false,
+        draggable: false,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwrMsuKdMATHX9UxgjC2exmu_i0UmhOP8&callback=initMap">
+  </script>
+  <script>
+    $(document).ready(function(){
+      $("a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top - 85
+          }, 800);
+        }
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function(){
+      var scroll_start = 0;
+      $(document).scroll(function() {
+        scroll_start = $(this).scrollTop();
+        if(scroll_start > 750) {
+            $('#top-contact').addClass('active');
+          } else {
+            $('#top-contact').removeClass('active');
+          }
+      });
+    });
+  </script>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="top-contact" id="top-contact">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          600 761 845
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          lokoomlodz@gmail.com
+          <i class="fa fa-location-arrow" aria-hidden="true"></i>
+          Łódź, Morgowa 7, Łódź, 91-223
+        </div>
+        <a href="#home" class="navbar-button navbar-logo logo">LOKOOM</a>
+        <div class="navbar-buttons">
+          <a href="#about" class="btn navbar-button">O firmie</a>
+          <a href="#products" class="btn navbar-button">Oferta</a>
+          <a href="#adres" class="btn navbar-button">Przydatne adresy</a>
+          <a href="#contact" class="btn navbar-button">Kontakt</a>
+        </div>
+      </div>
+    </nav>
+    <header class="header" id="home">
+      <img class="header-img" src="cover.jpg" alt="Lokoom" width="1500" height="800">
+      <div class="header-logo-container">
+        <span class="header-logo logo">LOKOOM</span>
+      </div>
+    </header>
+    <div class="content">
+      <section id="about">
+        <h2 class="section-header">O Firmie</h2>
+        <p>Witamy Państwa na stronie internetowej biura nieruchomości LOKOOM</p>
+        <p>Jeśli szukasz mieszkania, domu, działki, albo chcesz sprzedać lub wynająć nieruchomość i nie wiesz do końca jak to zrobić, nie wiesz jaka cena bedzie najrozsądniejsza, gdzie szukać ofert i chcesz mieć pewność, że podpiszesz właściwą umowę - ZAUFAJ NAM, oferujemy: </p>
+        <ul>
+          <li>
+            Pełną obsługę transakcji sprzedaży/kupna mieszkań, domów, gruntów, lokali, biur, magazynów
+          </li>
+          <li>
+            Badanie stanu prawnego nieruchomości
+          </li>
+          <li>
+            Bezpieczeństwo transakcji
+          </li>
+          <li>
+            Opiekę nad klientem od początku do końca transakcji
+          </li>
+          <li>
+            Udział sprawdzonej kancelarii notarialnej w przygotowaniu umów
+          </li>
+          <li>
+            Przygotowanie projektu umowy najmu, sprzedaży, kupna
+          </li>
+        </ul>
+        <p>Współpracujemy również z:</p>
+        <ul>
+          <li>Kancelariami Adwokackimi</li>
+          <li>Kancelarią Prawną</li>
+          <li>Kancelarią Notarialną</li>
+          <li>Firmą Geodezyjną</li>
+          <li>Radcą Prawnym</li>
+        </ul>
+        <p>ZAPRASZAMY DO WSPÓŁPRACY</p>
+      </section>
+      <section id="products" class="section-bg-grey">
+        <h2 class="section-header">Oferta</h2>
+        <div class="row">
+          <!-- <div class="row-element">
+            <h3>Oferta</h3>
+            <p>Oferta</p>
+            <p>txt</p>
+          </div>
+          <div class="row-element">
+            <h3>Oferta</h3>
+            <p>Oferta</p>
+            <p>txt</p>
+          </div>
+          <div class="row-element">
+            <h3>Oferta</h3>
+            <p>Oferta</p>
+            <p>txt</p>
+          </div>
+          <div class="row-element">
+            <h3>Oferta</h3>
+            <p>Oferta</p>
+            <p>txt</p>
+          </div> -->
+          <a href="https://www.olx.pl/oferty/uzytkownik/5kwkj/" target="_blank" alt="Link to OLX">
+            <button class="btn section-button products-button">
+              <img src="olx.png" class="products-button-img" alt="OLX logo" width="200"/>
+              <div>Zobacz aktualną ofertę</div>
+            </button>
+          </a>
+        </div>
+      </section>
+      <section id="adres">
+        <h2 class="section-header">Przydatne adresy</h2>
+        <p>Prezentujemy poniżej listę adresów wybranych instutucji:</p>
+        <div class="row">
+          <div class="row-element">
+            <h3>Urzędy Miasta</h3>
+            <p>
+              <h5>Urząd Miasta Łodzi</h5>
+              <span class="address">ul. Piotrkowska 104 90-926 Łódź</span>
+              <span class="address">tel. (42) 638-40-00</span>
+              <span class="address">Godziny otwarcia:</span>
+              <span class="address">Poniedziałek: 8.00 – 16.00</span>
+              <span class="address">Wtorek: 9.00 – 17.00</span>
+              <span class="address">Środa: 8.00 – 16.00</span>
+              <span class="address">Czwartek: 8.00 – 16.00</span>
+              <span class="address">Piątek: 8.00 – 16.00</span>
+            </p>
+            <p>
+              <h5>Urząd Miasta - Delegatura Łódź - Bałuty</h5>
+              <span class="address">ul. Zachodnia 47</span>
+              <span class="address">tel: (42) 253 56 00</span>
+            </p>
+            <p>
+              <h5>Urząd Miasta - Delegatura Łódź - Górna</h5>
+              <span class="address">Aleja Politechniki 32</span>
+              <span class="address">tel: (42) 638 56 14</span>
+            </p>
+            <p>
+              <h5>Urząd Miasta - Delegatura Łódź - Widzew</h5>
+              <span class="address">Al. Józefa Piłsudskiego 100</span>
+              <span class="address">tel: (42) 638 53 42</span>
+            </p>
+            <p>
+              <h5>Urząd Miasta - Delegatura Łódź - Śródmieście</h5>
+              <span class="address">Al. Józefa Piłsudskiego 100</span>
+              <span class="address">tel: (42) 638 53 42</span>
+            </p>
+            <p>
+              <h5>Urząd Miasta - Delegatura Łódź - Polesie</h5>
+              <span class="address">ul. Krzemieniecka 2b</span>
+              <span class="address">tel: (42) 638 52 82</span>
+            </p>
+          </div>
+          <div class="row-element">
+            <h3>Urzędy Skarbowe</h3>
+            <p>
+              <h5>Urząd Skarbowy - Delegatura Łódź - Śródmieście</h5>
+              <span class="address">ul. Dowborczyków 9/11 90-019 Łódź</span>
+              <span class="address">tel: (42) 253-06-00</span>
+            </p>
+            <p>
+              <h5>Pierwszy Urząd Skarbowy Łódź - Bałuty</h5>
+              <span class="address">ul. Zachodnia 47 91-066 Łódź</span>
+              <span class="address">tel: (42) 253-56-00</span>
+            </p>
+            <p>
+              <h5>Drugi Urząd Skarbowy Łódź - Bałuty</h5>
+              <span class="address">ul. Świętej Teresy Od Dzieciątka Jezus 105 91-066 Łódź</span>
+              <span class="address">tel: (42) 253-40-00</span>
+            </p>
+            <p>
+              <h5>Pierwszy Urząd Skarbowy Łódź - Górna</h5>
+              <span class="address">ul. Wróblewskiego 10 93-578 Łódź</span>
+              <span class="address">tel: (42) 258-81-00</span>
+            </p>
+            <p>
+              <h5>Drugi Urząd Skarbowy Łódź - Górna</h5>
+              <span class="address">ul. Wróblewskiego 10 93-578 Łódź</span>
+              <span class="address">tel: (42) 258-82-00</span>
+            </p>
+            <p>
+              <h5>Urząd Skarbowy Łódź - Widzew</h5>
+              <span class="address">ul. Papiernicza 7 92-312 Łódź</span>
+              <span class="address">tel: (42) 275-08-00</span>
+            </p>
+            <p>
+              <h5>Urząd Skarbowy Łódź - Polesie</h5>
+              <span class="address">ul. 6 Sierpnia 84/86 90-646 Łódź</span>
+              <span class="address">tel: (42) 254-60-00</span>
+            </p>
+          </div>
+          <div class="row-element">
+            <h3>Pozostałe instytucje</h3>
+            <p>
+              <h5>Odział Gazowniczy</h5>
+              <span class="address">ul. Uniwersytecka 2/4</span>
+              <span class="address">tel: (42) 675 93 15</span>
+            </p>
+            <p>
+              <h5>Urząd Miasta - Wydział Finansowy</h5>
+              <span class="address">Sienkiewicza 5, Łódź</span>
+              <span class="address">tel: (42) 638-45-27</span>
+            </p>
+            <p>
+              <h5>PGE Elektrownia</h5>
+              <span class="address">D.H.Uniwersal, plac Niepodległości 4</span>
+              <span class="address">al. Kościuszki 123</span>
+              <span class="address">tel: (42) 222 22 22</span>
+            </p>
+            <p>
+              <h5>Łódzki Ośrodek Geodezji</h5>
+              <span class="address">ul. Gen. Traugutta 21/23</span>
+              <span class="address">tel: (42) 637 47 36</span>
+            </p>
+            </div>
+        </div>
+      </section>
+      <section id="contact" class="section-bg-grey">
+        <h2 class="section-header">Formularz kontaktowy</h2>
+        <p>Skontaktuj się z nami już teraz:</p>
+        <form action="mail.php" method="post">
+          <input class="input" type="text" placeholder="Imię i Nazwisko" required name="name">
+          <input class="input" type="text" placeholder="Email" required name="email">
+          <input class="input" type="text" placeholder="Temat" required name="subject">
+          <input class="input" type="text" placeholder="Treść" required name="message">
+          <button class="btn section-button" type="submit">
+            <i class="fa fa-paper-plane"></i> Wyślij
+          </button>
+        </form>
+      </section>
+    </div>
+    <div id="googleMap" class="map"></div>
+    <footer>
+      <div class="footer">
+        <p class="footer-info">Dane o firmie</p>
+          <p class="footer-text">Filip Śmietanka</p>
+          <p class="footer-text">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            600 761 845
+          </p>
+          <p class="footer-text">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            lokoomlodz@gmail.com
+          </p>
+          <p class="footer-text">
+            <i class="fa fa-location-arrow" aria-hidden="true"></i>
+            Morgowa 7, Łódź, 91-223
+          </p>
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+          </span>
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+          </span>
+      </div>
+      <div class="bottom-footer">
+        <p class="bottom-footer-text">
+          Projekt i wykonanie
+          <a href="https://tommybernaciak.github.io/" title="Tommy Bernaciak" target="_blank" class="footer-link">
+            Tommy Bernaciak
+          </a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
